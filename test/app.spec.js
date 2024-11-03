@@ -58,4 +58,9 @@ describe('Testing Calculator functionalities ', ()=>{
         expect(() => calc.add("//:\n7,8")).to.throw('Invalid Number Found : 7,8');
     });
 
+    it('it should show all negative numbers seperated by commas', () => {
+        expect(() => calc.add("15,-14, 23,-50"))
+            .to.throw('negative numbers not allowed -14,-50');
+    });
+
 })
