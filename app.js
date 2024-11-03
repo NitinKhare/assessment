@@ -38,6 +38,3 @@ export class Calculator {
         return result;
     }
 }
-
-const calc = new Calculator()
-console.log(calc.add("// \n7  8 "));
