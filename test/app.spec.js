@@ -34,8 +34,28 @@ describe('Testing Calculator functionalities ', ()=>{
         expect(calc.add("7,8,9,10")).to.equal(34);
     });
     //"1\n2,3"
-    it('should handle newline ', () => {
+    it('it should handle newline ', () => {
         expect(calc.add("1\n2, 3")).to.equal(6);
+    });
+
+    it('it should support different delimiter => ;', () => {
+        expect(calc.add("//;\n1;2")).to.equal(3);
+    });
+
+    it('it should support different delimiter => :', () => {
+        expect(calc.add("//:\n7:8")).to.equal(15);
+    });
+
+    it('it should support different delimiter with space=> :', () => {
+        expect(calc.add("//:\n7: 8 ")).to.equal(15);
+    });
+
+    it('it should support space as a delimiter', () => {
+        expect(calc.add("// \n7  8 ")).to.equal(15);
+    });
+
+    it('it should fail for inconsitent delimiter => :', () => {
+        expect(() => calc.add("//:\n7,8")).to.throw('Invalid Number Found : 7,8');
     });
 
 })
