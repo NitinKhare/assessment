@@ -6,7 +6,7 @@ export class Calculator {
         if(!isNaN(num)){
             return parseFloat(num);
         }
-        const nums = num.split(",");
+        const nums = num.replace(/\n/g, ',').split(",");
         let result = 0;
         for(let i=0; i<nums.length; i++){
             if(isNaN(nums[i])){

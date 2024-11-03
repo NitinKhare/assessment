@@ -33,5 +33,9 @@ describe('Testing Calculator functionalities ', ()=>{
     it('it should add multiple numbers', () => {
         expect(calc.add("7,8,9,10")).to.equal(34);
     });
+    //"1\n2,3"
+    it('should handle newline ', () => {
+        expect(calc.add("1\n2, 3")).to.equal(6);
+    });
 
 })
