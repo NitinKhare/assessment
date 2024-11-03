@@ -28,7 +28,10 @@ describe('Testing Calculator functionalities ', ()=>{
 
     it("it should fail for invalid numbers", () => {
         expect(() => calc.add("-1, 2.f")).to.throw('Invalid Number Found : 2.f');
+    });
 
+    it('it should add multiple numbers', () => {
+        expect(calc.add("7,8,9,10")).to.equal(34);
     });
 
 })
